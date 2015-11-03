@@ -12,6 +12,7 @@ Minim minim;
 AudioPlayer hello;
 AudioPlayer notouch;
 AudioPlayer anything;
+AudioPlayer love;
 
 import processing.serial.*;
 import cc.arduino.*;
@@ -24,7 +25,7 @@ int sensorPin2 = 1;
 
 
 void setup() {
-  size(1000, 1000);
+  size(1300, 800);
   background(0);
   smooth();
   ellipseMode(CENTER);
@@ -33,7 +34,8 @@ void setup() {
   hello = minim.loadFile("hello.mp3");
   hello.play();
   anything = minim.loadFile("Anything With You.mp3");
-  notouch = minim.loadFile("donttouch.mp3");
+  notouch = minim.loadFile("We Should Kiss.mp3");
+  love = minim.loadFile("Loved You.mp3");
   
 //  int rand = random(1,3);
 //  minim.loadfile(rand + ".mp3");
@@ -56,7 +58,7 @@ void draw() {
   
   if (mousePressed == true) 
     { 
-            
+      love.play();      
       jane.digitalWrite(ledPin, Arduino.HIGH);
       delay(1000);
     } else {                           
@@ -72,9 +74,9 @@ void draw() {
     if (analogValue > 100){
 //    fill(255,0,0);
 //    ellipse(width/2, height/2, analogValue, analogValue);
-    textSize(72);
+    textSize(200);
     fill(255, 0, 0);
-    text("stop",width/2 - 90,height/2);
+    text("I <3 U",width/2 - 300,height/2 + 75);
     notouch.play();
 
     
