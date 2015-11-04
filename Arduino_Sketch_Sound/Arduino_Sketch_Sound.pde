@@ -58,7 +58,8 @@ void draw() {
   
   if (mousePressed == true) 
     { 
-      love.play();      
+      love.play();
+      love.rewind();
       jane.digitalWrite(ledPin, Arduino.HIGH);
       delay(1000);
     } else {                           
@@ -69,6 +70,7 @@ void draw() {
   
   if (analogValue2 > 1000){
     anything.play();
+    anything.rewind();
     } 
     
     if (analogValue > 100){
@@ -78,9 +80,9 @@ void draw() {
     fill(255, 0, 0);
     text("I <3 U",width/2 - 300,height/2 + 75);
     notouch.play();
+    notouch.rewind();
 
     
     }
    
 }
-
